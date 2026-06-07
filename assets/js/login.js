@@ -1,10 +1,31 @@
 /* ==========================================
 DIDATIK
 LOGIN.JS
+
+Funções:
+✓ Login com Firebase
+✓ Validação de formulário
+✓ Loading
+✓ Login com Google (estrutura pronta)
+✓ Redirecionamento para Dashboard
+========================================== */
+
+import { auth } from "../../firebase/firebase-config.js";
+
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+/* ==========================================
+INICIALIZAÇÃO
 ========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-iniciarLogin();
+
+  iniciarLogin();
+
 });
 
 /* ==========================================
@@ -26,17 +47,18 @@ document.getElementById("googleLogin");
 const btnLogin =
 document.querySelector(".btn-login");
 
+const mensagem =
+document.getElementById("mensagem");
+
 /* ==========================================
 INICIAR
 ========================================== */
 
 function iniciarLogin() {
 
-```
-configurarFormulario();
+  configurarFormulario();
 
-configurarGoogle();
-```
+  configurarGoogle();
 
 }
 
@@ -46,33 +68,31 @@ FORMULÁRIO
 
 function configurarFormulario() {
 
-```
-if (!formLogin) return;
+  if (!formLogin) return;
 
-formLogin.addEventListener(
+  formLogin.addEventListener(
     "submit",
     async (event) => {
 
-        event.preventDefault();
+      event.preventDefault();
 
-        const email =
-            emailInput.value.trim();
+      const email =
+        emailInput.value.trim();
 
-        const senha =
-            senhaInput.value.trim();
+      const senha =
+        senhaInput.value;
 
-        if (!validarFormulario(email, senha)) {
-            return;
-        }
+      if (!validarFormulario(email, senha)) {
+        return;
+      }
 
-        await realizarLogin(
-            email,
-            senha
-        );
+      await realizarLogin(
+        email,
+        senha
+      );
 
     }
-);
-```
+  );
 
 }
 
@@ -82,123 +102,157 @@ VALIDAÇÃO
 
 function validarFormulario(email, senha) {
 
-```
-if (!email) {
+  if (!email) {
+
+    mostrarMensagem(
+      "Informe seu e-mail.",
+      "erro"
+    );
 
     emailInput.focus();
 
     return false;
-}
+  }
 
-if (!senha) {
+  if (!senha) {
+
+    mostrarMensagem(
+      "Informe sua senha.",
+      "erro"
+    );
 
     senhaInput.focus();
 
     return false;
-}
+  }
 
-return true;
-```
+  return true;
 
 }
 
 /* ==========================================
-LOGIN
+LOGIN FIREBASE
 ========================================== */
 
-async function realizarLogin(email, senha) {
+async function realizarLogin(
+  email,
+  senha
+) {
 
-```
-try {
+  try {
 
     ativarLoading();
 
-    console.log("Tentativa de login");
-
-    console.log({
-        email
-    });
-
-    /*
-    =======================================
-    FIREBASE AUTH
-    =======================================
-
-    import {
-        signInWithEmailAndPassword
-    } from "firebase-auth";
-
     await signInWithEmailAndPassword(
-        auth,
-        email,
-        senha
+      auth,
+      email,
+      senha
     );
 
-    =======================================
-    */
-
-    await simularLogin();
-
-    redirecionarDashboard();
-
-}
-
-catch (erro) {
-
-    console.error(
-        "Erro ao autenticar:",
-        erro
+    mostrarMensagem(
+      "Login realizado com sucesso!",
+      "sucesso"
     );
+
+    setTimeout(() => {
+
+      redirecionarDashboard();
+
+    }, 1000);
+
+  }
+
+  catch (erro) {
+
+    console.error(erro);
 
     desativarLoading();
 
-}
-```
+    switch (erro.code) {
+
+      case "auth/user-not-found":
+
+        mostrarMensagem(
+          "Usuário não encontrado.",
+          "erro"
+        );
+
+        break;
+
+      case "auth/wrong-password":
+
+        mostrarMensagem(
+          "Senha incorreta.",
+          "erro"
+        );
+
+        break;
+
+      case "auth/invalid-credential":
+
+        mostrarMensagem(
+          "E-mail ou senha inválidos.",
+          "erro"
+        );
+
+        break;
+
+      case "auth/invalid-email":
+
+        mostrarMensagem(
+          "E-mail inválido.",
+          "erro"
+        );
+
+        break;
+
+      default:
+
+        mostrarMensagem(
+          "Erro ao realizar login.",
+          "erro"
+        );
+
+    }
+
+  }
 
 }
 
 /* ==========================================
-LOGIN GOOGLE
+LOGIN COM GOOGLE
 ========================================== */
 
 function configurarGoogle() {
 
-```
-if (!googleBtn) return;
+  if (!googleBtn) return;
 
-googleBtn.addEventListener(
+  googleBtn.addEventListener(
     "click",
     async () => {
 
-        try {
+      try {
 
-            console.log(
-                "Login Google"
-            );
+        const provider =
+          new GoogleAuthProvider();
 
-            /*
-            FUTURO:
+        await signInWithPopup(
+          auth,
+          provider
+        );
 
-            const provider =
-                new GoogleAuthProvider();
+        redirecionarDashboard();
 
-            await signInWithPopup(
-                auth,
-                provider
-            );
-            */
+      }
 
-        }
+      catch (erro) {
 
-        catch (erro) {
+        console.error(erro);
 
-            console.error(erro);
-
-        }
+      }
 
     }
-);
-```
+  );
 
 }
 
@@ -208,47 +262,43 @@ LOADING
 
 function ativarLoading() {
 
-```
-if (!btnLogin) return;
+  if (!btnLogin) return;
 
-btnLogin.disabled = true;
+  btnLogin.disabled = true;
 
-btnLogin.textContent =
+  btnLogin.textContent =
     "Entrando...";
-```
 
 }
 
 function desativarLoading() {
 
-```
-if (!btnLogin) return;
+  if (!btnLogin) return;
 
-btnLogin.disabled = false;
+  btnLogin.disabled = false;
 
-btnLogin.textContent =
+  btnLogin.textContent =
     "Entrar";
-```
 
 }
 
 /* ==========================================
-SIMULAÇÃO TEMPORÁRIA
+MENSAGENS
 ========================================== */
 
-function simularLogin() {
+function mostrarMensagem(
+  texto,
+  tipo
+) {
 
-```
-return new Promise((resolve) => {
+  if (!mensagem) return;
 
-    setTimeout(() => {
+  mensagem.textContent = texto;
 
-        resolve();
-
-    }, 1200);
-
-});
-```
+  mensagem.style.color =
+    tipo === "erro"
+      ? "#ef4444"
+      : "#22c55e";
 
 }
 
@@ -258,22 +308,19 @@ REDIRECIONAMENTO
 
 function redirecionarDashboard() {
 
-
-window.location.href =
+  window.location.href =
     "dashboard.html";
-
 
 }
 
 /* ==========================================
-API PÚBLICA
+API GLOBAL
 ========================================== */
 
 window.DidatikLogin = {
 
+  realizarLogin,
 
-realizarLogin,
-redirecionarDashboard
-
+  redirecionarDashboard
 
 };

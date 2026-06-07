@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 
+    <!-- =====================================
+         META
+    ====================================== -->
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Didatik • Planos</title>
+    <title>Didatik • Planos</title>
 
-<link rel="stylesheet" href="../assets/css/planos.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/planos.css">
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
 </head>
 <body>
-
 
 <!-- =====================================
      HEADER
@@ -26,21 +26,22 @@
 
 <header class="header">
 
-    <div class="logo">
+    <div class="container">
 
-        <span>DT</span>
+        <a href="../index.html" class="logo">
+            Didatik
+        </a>
 
-        <h1>Didatik</h1>
+        <nav class="nav">
+
+            <a href="#planos">Planos</a>
+            <a href="#beneficios">Benefícios</a>
+            <a href="#como-funciona">Como Funciona</a>
+            <a href="login.html">Entrar</a>
+
+        </nav>
 
     </div>
-
-    <nav>
-
-        <a href="#beneficios">Recursos</a>
-        <a href="#planos">Planos</a>
-        <a href="login.html">Entrar</a>
-
-    </nav>
 
 </header>
 
@@ -50,22 +51,40 @@
 
 <section class="hero">
 
-    <span class="tag">
-        Plataforma para Professores
-    </span>
+    <div class="container hero-container">
 
-    <h2>
-        Organize suas aulas em uma plataforma profissional.
-    </h2>
+        <div class="hero-content">
 
-    <p>
-        Crie disciplinas, publique materiais, organize conteúdos,
-        acompanhe alunos e centralize todo o seu trabalho em um único lugar.
-    </p>
+            <span class="hero-badge">
+                🚀 Plataforma de Aulas Interativas
+            </span>
 
-    <a href="#planos" class="btn-primary">
-        Ver Planos
-    </a>
+            <h1>
+                Aprenda de forma mais simples, visual e envolvente.
+            </h1>
+
+            <p class="hero-description">
+
+                Experimente gratuitamente uma aula de cada disciplina
+                e descubra uma nova forma de aprender com o Didatik.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#planos" class="btn-primary">
+                    Ver Planos
+                </a>
+
+                <a href="login.html" class="btn-secondary">
+                    Criar Conta Grátis
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -73,120 +92,145 @@
      PLANOS
 ====================================== -->
 
-<section
-    class="plans-section"
-    id="planos"
->
+<section class="section" id="planos">
 
-    <div class="section-header">
+    <div class="container">
 
-        <h2>Escolha o plano ideal</h2>
+        <div class="section-header">
 
-        <p>
-            Comece pequeno e evolua conforme suas necessidades.
-        </p>
-
-    </div>
-
-    <div class="plans-grid">
-
-        <!-- PLANO 1 -->
-
-        <article class="plan-card">
-
-            <span class="plan-badge">
-                Essencial
+            <span class="section-tag">
+                PLANOS
             </span>
 
-            <h3>Professor</h3>
+            <h2>
+                Escolha o plano ideal
+            </h2>
 
-            <div class="price">
+            <p>
+                Comece gratuitamente e evolua quando quiser.
+            </p>
 
-                <strong>R$ 29</strong>
+        </div>
 
-                <span>/mês</span>
+        <div class="plans-grid">
+
+            <!-- FREE -->
+
+            <div class="plan-card">
+
+                <span class="plan-badge">
+                    GRATUITO
+                </span>
+
+                <h3>
+                    Free
+                </h3>
+
+                <div class="price">
+
+                    <strong>R$ 0</strong>
+
+                    <span>para sempre</span>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        ✓ 1 aula gratuita de cada disciplina
+                    </li>
+
+                    <li>
+                        ✓ Conhecer a plataforma
+                    </li>
+
+                    <li>
+                        ✓ Testar a experiência Didatik
+                    </li>
+
+                    <li>
+                        ✓ Cadastro gratuito
+                    </li>
+
+                    <li class="disabled">
+                        ✕ Demais aulas bloqueadas
+                    </li>
+
+                    <li class="disabled">
+                        ✕ Conteúdo Premium
+                    </li>
+
+                    <li class="disabled">
+                        ✕ Atualizações completas
+                    </li>
+
+                </ul>
+
+                <button class="btn-free">
+                    Experimentar
+                </button>
 
             </div>
 
-            <ul>
+            <!-- PREMIUM -->
 
-                <li>✓ Disciplinas ilimitadas</li>
-                <li>✓ Aulas ilimitadas</li>
-                <li>✓ Materiais didáticos</li>
-                <li>✓ Login Google</li>
+            <div class="plan-card featured">
 
-            </ul>
+                <span class="plan-badge premium-badge">
+                    MAIS POPULAR
+                </span>
 
-            <button>
-                Assinar
-            </button>
+                <h3>
+                    Premium
+                </h3>
 
-        </article>
+                <div class="price">
 
-        <!-- PLANO 2 -->
+                    <strong>R$ 14,90</strong>
 
-        <article class="plan-card featured">
+                    <span>/mês</span>
 
-            <span class="plan-badge">
-                Mais Popular
-            </span>
+                </div>
 
-            <h3>Profissional</h3>
+                <ul>
 
-            <div class="price">
+                    <li>
+                        ✓ Todas as aulas liberadas
+                    </li>
 
-                <strong>R$ 59</strong>
+                    <li>
+                        ✓ Todas as disciplinas
+                    </li>
 
-                <span>/mês</span>
+                    <li>
+                        ✓ Conteúdo ilimitado
+                    </li>
 
-            </div>
+                    <li>
+                        ✓ Atualizações constantes
+                    </li>
 
-            <ul>
+                    <li>
+                        ✓ Novas aulas adicionadas
+                    </li>
 
-                <li>✓ Tudo do Essencial</li>
-                <li>✓ Banco de questões</li>
-                <li>✓ Atividades online</li>
-                <li>✓ Relatórios</li>
-                <li>✓ IA Didatik</li>
+                    <li>
+                        ✓ Recursos exclusivos
+                    </li>
 
-            </ul>
+                    <li>
+                        ✓ Acesso completo
+                    </li>
 
-            <button>
-                Assinar
-            </button>
+                </ul>
 
-        </article>
-
-        <!-- PLANO 3 -->
-
-        <article class="plan-card">
-
-            <span class="plan-badge">
-                Institucional
-            </span>
-
-            <h3>Escola</h3>
-
-            <div class="price">
-
-                <strong>Personalizado</strong>
+                <button class="btn-premium">
+                    Assinar Premium
+                </button>
 
             </div>
 
-            <ul>
-
-                <li>✓ Professores ilimitados</li>
-                <li>✓ Turmas ilimitadas</li>
-                <li>✓ Gestão centralizada</li>
-                <li>✓ Suporte prioritário</li>
-
-            </ul>
-
-            <button>
-                Falar com Comercial
-            </button>
-
-        </article>
+        </div>
 
     </div>
 
@@ -196,39 +240,120 @@
      BENEFÍCIOS
 ====================================== -->
 
-<section
-    class="benefits"
-    id="beneficios"
->
+<section class="section" id="beneficios">
 
-    <h2>
-        Tudo que você precisa para ensinar melhor
-    </h2>
+    <div class="container">
 
-    <div class="benefits-grid">
+        <div class="section-header">
 
-        <div class="benefit-card">
-            📚 Disciplinas
+            <span class="section-tag">
+                BENEFÍCIOS
+            </span>
+
+            <h2>
+                Por que escolher o Didatik?
+            </h2>
+
         </div>
 
-        <div class="benefit-card">
-            🎓 Aulas
-        </div>
+        <div class="benefits-grid">
 
-        <div class="benefit-card">
-            📝 Atividades
-        </div>
+            <div class="benefit-card">
 
-        <div class="benefit-card">
-            📊 Relatórios
-        </div>
+                <div class="benefit-icon">
+                    📚
+                </div>
 
-        <div class="benefit-card">
-            🤖 IA Educacional
-        </div>
+                <h3>
+                    Aulas Interativas
+                </h3>
 
-        <div class="benefit-card">
-            ☁️ Nuvem
+                <p>
+                    Conteúdo moderno, visual e fácil de compreender.
+                </p>
+
+            </div>
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Conteúdo Organizado
+                </h3>
+
+                <p>
+                    Tudo separado por disciplinas e temas.
+                </p>
+
+            </div>
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Aprendizagem Visual
+                </h3>
+
+                <p>
+                    Diagramas, animações e recursos visuais.
+                </p>
+
+            </div>
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Multiplataforma
+                </h3>
+
+                <p>
+                    Funciona perfeitamente em celular e computador.
+                </p>
+
+            </div>
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Atualizações Constantes
+                </h3>
+
+                <p>
+                    Novos conteúdos adicionados regularmente.
+                </p>
+
+            </div>
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Diversas Disciplinas
+                </h3>
+
+                <p>
+                    Física, Matemática, Química e muito mais.
+                </p>
+
+            </div>
+
         </div>
 
     </div>
@@ -236,30 +361,130 @@
 </section>
 
 <!-- =====================================
-     CTA FINAL
+     COMO FUNCIONA
+====================================== -->
+
+<section class="section" id="como-funciona">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                PASSO A PASSO
+            </span>
+
+            <h2>
+                Comece em poucos minutos
+            </h2>
+
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+
+                <span>1</span>
+
+                <h3>
+                    Crie sua conta
+                </h3>
+
+                <p>
+                    Cadastro rápido e gratuito.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <span>2</span>
+
+                <h3>
+                    Explore o conteúdo
+                </h3>
+
+                <p>
+                    Acesse gratuitamente uma aula de cada disciplina.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <span>3</span>
+
+                <h3>
+                    Desbloqueie tudo
+                </h3>
+
+                <p>
+                    Assine o Premium para acesso completo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     CTA
 ====================================== -->
 
 <section class="cta">
 
-    <h2>
-        Pronto para transformar sua rotina?
-    </h2>
+    <div class="container">
 
-    <p>
-        Centralize todo o seu trabalho em uma única plataforma.
-    </p>
+        <h2>
+            Pronto para começar?
+        </h2>
 
-    <a
-        href="login.html"
-        class="btn-primary"
-    >
-        Começar Agora
-    </a>
+        <p>
+
+            Crie sua conta gratuita agora e descubra uma nova forma
+            de aprender com o Didatik.
+
+        </p>
+
+        <a href="login.html" class="btn-primary">
+
+            Criar Conta Grátis
+
+        </a>
+
+    </div>
 
 </section>
 
-<script src="../assets/js/planos.js"></script>
+<!-- =====================================
+     FOOTER
+====================================== -->
 
+<footer class="footer">
+
+    <div class="container">
+
+        <h3>
+            Didatik
+        </h3>
+
+        <p>
+            Planeje menos. Aprenda mais.
+        </p>
+
+        <p>
+            © 2026 Didatik • Todos os direitos reservados.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- JS -->
+<script src="../assets/js/planos.js"></script>
 
 </body>
 </html>

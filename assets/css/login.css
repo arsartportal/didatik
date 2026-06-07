@@ -13,62 +13,117 @@ padding:0;
 box-sizing:border-box;
 }
 
-:root{
-
-
---primary:#2563eb;
---primary-hover:#1d4ed8;
-
---bg:#f8fafc;
---card:#ffffff;
-
---text:#0f172a;
---muted:#64748b;
-
---border:#e2e8f0;
-
---shadow:
-    0 20px 60px rgba(15,23,42,.08);
-
-
-}
-
-/* ==========================================
-BASE
-========================================== */
-
 html{
 scroll-behavior:smooth;
 }
 
-body{
+/* ==========================================
+VARIÁVEIS
+========================================== */
 
+:root{
+
+--primary:#5B4CF0;
+--primary-dark:#4338CA;
+--secondary:#8B5CF6;
+--accent:#06B6D4;
+
+--bg:#F8FAFC;
+--card:#FFFFFF;
+
+--text:#0F172A;
+--text-light:#64748B;
+
+--border:#E2E8F0;
+
+--shadow:
+0 10px 40px rgba(15,23,42,.05);
+
+--shadow-hover:
+0 30px 80px rgba(91,76,240,.18);
+
+--radius:28px;
+
+}
+
+/* ==========================================
+BODY
+========================================== */
+
+body{
 
 font-family:'Inter',sans-serif;
 
-min-height:100vh;
-
 background:
 radial-gradient(
-    circle at top left,
-    rgba(37,99,235,.08),
-    transparent 35%
+circle at top left,
+rgba(91,76,240,.12),
+transparent 35%
 ),
 radial-gradient(
-    circle at bottom right,
-    rgba(99,102,241,.06),
-    transparent 35%
+circle at bottom right,
+rgba(6,182,212,.10),
+transparent 35%
 ),
 var(--bg);
 
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:40px;
-
 color:var(--text);
 
+min-height:100vh;
+
+overflow-x:hidden;
+
+position:relative;
+
+}
+
+/* ==========================================
+EFEITOS DE FUNDO
+========================================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:-250px;
+left:-250px;
+
+width:700px;
+height:700px;
+
+background:
+radial-gradient(
+circle,
+rgba(91,76,240,.12),
+transparent 70%
+);
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+bottom:-250px;
+right:-250px;
+
+width:700px;
+height:700px;
+
+background:
+radial-gradient(
+circle,
+rgba(6,182,212,.10),
+transparent 70%
+);
+
+z-index:-2;
 
 }
 
@@ -78,17 +133,12 @@ CONTAINER
 
 .login-container{
 
-
-width:100%;
-max-width:1200px;
+min-height:100vh;
 
 display:grid;
-grid-template-columns:1fr 500px;
 
-gap:80px;
-
-align-items:center;
-
+grid-template-columns:
+1.1fr 1fr;
 
 }
 
@@ -98,121 +148,218 @@ BANNER
 
 .login-banner{
 
+padding:60px;
 
 display:flex;
+
 flex-direction:column;
+
 justify-content:center;
 
+background:
+linear-gradient(
+135deg,
+rgba(91,76,240,.08),
+rgba(139,92,246,.05)
+);
+
+position:relative;
+
+overflow:hidden;
 
 }
 
+.login-banner::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+height:700px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(91,76,240,.12),
+transparent 70%
+);
+
+top:-300px;
+right:-250px;
+
+}
+
+/* ==========================================
+LOGO
+========================================== */
+
 .brand{
 
-
 display:flex;
+
 align-items:center;
+
 gap:16px;
 
-margin-bottom:50px;
-
+margin-bottom:60px;
 
 }
 
 .logo{
 
+width:70px;
+height:70px;
 
-width:58px;
-height:58px;
-
-border-radius:18px;
-
-background:
-linear-gradient(
-    135deg,
-    #2563eb,
-    #1d4ed8
-);
-
-color:white;
+border-radius:22px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:1.1rem;
+font-size:1.4rem;
 font-weight:800;
 
-letter-spacing:.5px;
+color:white;
+
+background:
+linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
 
 box-shadow:
-    0 10px 25px rgba(37,99,235,.25);
-
+0 15px 35px rgba(91,76,240,.25);
 
 }
 
 .brand h1{
 
+font-family:'Poppins',sans-serif;
 
-font-size:2rem;
+font-size:2.2rem;
+
 font-weight:800;
 
-color:var(--text);
+background:
+linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
 
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 
 }
 
+/* ==========================================
+CONTEÚDO
+========================================== */
+
 .tag{
 
+display:inline-block;
 
-display:inline-flex;
-align-items:center;
-
-width:max-content;
-
-padding:10px 16px;
+padding:10px 18px;
 
 border-radius:999px;
 
-background:#eff6ff;
+background:white;
 
-border:1px solid #bfdbfe;
+border:1px solid var(--border);
 
-color:var(--primary);
+box-shadow:var(--shadow);
 
 font-size:.85rem;
 font-weight:700;
 
-margin-bottom:25px;
+color:var(--primary);
 
+margin-bottom:25px;
 
 }
 
 .banner-content h2{
 
+font-family:'Poppins',sans-serif;
 
-font-size:3.5rem;
-font-weight:800;
+font-size:3.4rem;
 
 line-height:1.1;
 
-max-width:700px;
-
 margin-bottom:25px;
-
 
 }
 
 .banner-content p{
 
+max-width:550px;
 
-max-width:600px;
-
-font-size:1.08rem;
+font-size:1.1rem;
 
 line-height:1.9;
 
-color:var(--muted);
+color:var(--text-light);
 
+}
+
+/* ==========================================
+ESTATÍSTICAS
+========================================== */
+
+.banner-stats{
+
+display:flex;
+
+gap:25px;
+
+margin-top:50px;
+
+}
+
+.stat{
+
+background:
+rgba(255,255,255,.75);
+
+backdrop-filter:blur(15px);
+
+padding:25px;
+
+border-radius:22px;
+
+min-width:140px;
+
+border:
+1px solid rgba(255,255,255,.8);
+
+box-shadow:var(--shadow);
+
+}
+
+.stat strong{
+
+display:block;
+
+font-size:2rem;
+
+font-weight:800;
+
+color:var(--primary);
+
+margin-bottom:5px;
+
+}
+
+.stat span{
+
+color:var(--text-light);
+
+font-size:.95rem;
 
 }
 
@@ -221,100 +368,111 @@ LOGIN PANEL
 ========================================== */
 
 .login-panel{
-width:100%;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+padding:40px;
+
 }
 
 /* ==========================================
-CARD
+LOGIN CARD
 ========================================== */
 
 .login-card{
 
+width:100%;
+max-width:500px;
 
-background:rgba(255,255,255,.95);
-
-border:1px solid rgba(226,232,240,.8);
-
-border-radius:32px;
-
-padding:42px;
+background:
+rgba(255,255,255,.85);
 
 backdrop-filter:blur(20px);
 
-box-shadow:
-    0 20px 60px rgba(15,23,42,.08);
+border:
+1px solid rgba(255,255,255,.8);
 
+border-radius:32px;
+
+padding:45px;
+
+box-shadow:
+0 30px 80px rgba(15,23,42,.08);
 
 }
 
+/* ==========================================
+CARD HEADER
+========================================== */
+
 .card-header{
 
-
-margin-bottom:30px;
-
+margin-bottom:35px;
 
 }
 
 .card-header h2{
 
-
 font-size:2rem;
+
 font-weight:800;
 
 margin-bottom:10px;
 
+color:var(--text);
 
 }
 
 .card-header p{
 
-
-color:var(--muted);
+color:var(--text-light);
 
 line-height:1.7;
-
 
 }
 
 /* ==========================================
-FORM
+FORMULÁRIO
 ========================================== */
 
 #loginForm{
 
-
 display:flex;
+
 flex-direction:column;
 
-gap:20px;
-
+gap:22px;
 
 }
 
+/* ==========================================
+INPUT GROUP
+========================================== */
+
 .input-group{
 
-
 display:flex;
+
 flex-direction:column;
 
 gap:8px;
-
 
 }
 
 .input-group label{
 
-
 font-size:.95rem;
+
 font-weight:600;
 
+color:var(--text);
 
 }
 
 .input-group input{
-
-
-width:100%;
 
 height:56px;
 
@@ -324,23 +482,22 @@ border:1px solid var(--border);
 
 border-radius:16px;
 
+background:white;
+
 font-size:1rem;
 
-transition:.25s;
+outline:none;
 
+transition:.3s;
 
 }
 
 .input-group input:focus{
 
-
-outline:none;
-
 border-color:var(--primary);
 
 box-shadow:
-    0 0 0 4px rgba(37,99,235,.10);
-
+0 0 0 4px rgba(91,76,240,.12);
 
 }
 
@@ -350,54 +507,54 @@ FORM OPTIONS
 
 .form-options{
 
-
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
 
 margin-top:-5px;
-
 
 }
 
 .remember{
 
-
 display:flex;
+
 align-items:center;
+
 gap:8px;
 
-font-size:.9rem;
+font-size:.95rem;
 
-color:var(--muted);
+color:var(--text-light);
 
+cursor:pointer;
 
 }
 
 .remember input{
 
-
-width:16px;
-height:16px;
-
+accent-color:var(--primary);
 
 }
 
 .forgot-password{
 
-
 text-decoration:none;
 
-color:var(--primary);
+font-size:.95rem;
 
-font-size:.9rem;
 font-weight:600;
 
+color:var(--primary);
 
 }
 
 .forgot-password:hover{
+
 text-decoration:underline;
+
 }
 
 /* ==========================================
@@ -406,39 +563,40 @@ BOTÃO LOGIN
 
 .btn-login{
 
-
 width:100%;
 
-height:56px;
+height:58px;
 
 border:none;
 
-border-radius:16px;
-
-background:var(--primary);
-
-color:white;
-
-font-size:1rem;
-font-weight:700;
+border-radius:18px;
 
 cursor:pointer;
 
-transition:.25s;
+font-size:1rem;
 
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+box-shadow:
+0 15px 35px rgba(91,76,240,.25);
+
+transition:.3s;
 
 }
 
 .btn-login:hover{
 
-
-background:var(--primary-hover);
-
-transform:translateY(-2px);
-
-box-shadow:
-    0 10px 25px rgba(37,99,235,.25);
-
+transform:
+translateY(-3px);
 
 }
 
@@ -448,99 +606,120 @@ DIVIDER
 
 .divider{
 
-
 position:relative;
-
-text-align:center;
 
 margin:30px 0;
 
+text-align:center;
 
 }
 
 .divider::before{
 
-
 content:"";
 
 position:absolute;
 
-top:50%;
 left:0;
+top:50%;
 
 width:100%;
 height:1px;
 
 background:var(--border);
 
-
 }
 
 .divider span{
-
 
 position:relative;
 
 background:white;
 
-padding:0 14px;
+padding:0 15px;
 
-color:#94a3b8;
+color:var(--text-light);
 
 font-size:.9rem;
-
 
 }
 
 /* ==========================================
-GOOGLE BUTTON
+GOOGLE
 ========================================== */
 
 .btn-google{
 
-
 width:100%;
 
-height:56px;
+height:58px;
 
 border:1px solid var(--border);
 
-border-radius:16px;
+border-radius:18px;
 
 background:white;
 
 cursor:pointer;
 
-display:flex;
-align-items:center;
-justify-content:center;
-gap:12px;
-
 font-size:1rem;
+
 font-weight:600;
 
-transition:.25s;
+color:var(--text);
 
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+gap:12px;
+
+transition:.3s;
 
 }
 
 .btn-google:hover{
 
+box-shadow:var(--shadow);
 
-background:#f8fafc;
-
-border-color:#cbd5e1;
-
-transform:translateY(-2px);
-
-box-shadow:
-    0 8px 20px rgba(15,23,42,.05);
-
+transform:
+translateY(-2px);
 
 }
 
-.btn-google svg{
-flex-shrink:0;
+/* ==========================================
+CRIAR CONTA
+========================================== */
+
+.register-link{
+
+margin-top:25px;
+
+text-align:center;
+
+}
+
+.register-link p{
+
+color:var(--text-light);
+
+}
+
+.register-link a{
+
+color:var(--primary);
+
+font-weight:700;
+
+text-decoration:none;
+
+}
+
+.register-link a:hover{
+
+text-decoration:underline;
+
 }
 
 /* ==========================================
@@ -549,27 +728,41 @@ ACCESS INFO
 
 .access-info{
 
+margin-top:25px;
 
-margin-top:24px;
+padding:18px;
 
-padding-top:20px;
+border-radius:18px;
 
-border-top:1px solid var(--border);
+background:
+rgba(91,76,240,.06);
+
+border:
+1px solid rgba(91,76,240,.10);
 
 text-align:center;
-
 
 }
 
 .access-info p{
 
-
-font-size:.9rem;
+font-size:.92rem;
 
 line-height:1.7;
 
-color:var(--muted);
+color:var(--text-light);
 
+}
+
+/* ==========================================
+SELECTION
+========================================== */
+
+::selection{
+
+background:var(--primary);
+
+color:white;
 
 }
 
@@ -577,73 +770,106 @@ color:var(--muted);
 RESPONSIVO
 ========================================== */
 
-@media(max-width:1000px){
-
+@media(max-width:1100px){
 
 .login-container{
 
-    grid-template-columns:1fr;
+grid-template-columns:1fr;
 
-    max-width:550px;
 }
 
 .login-banner{
 
-    text-align:center;
-}
+padding:50px 40px;
 
-.brand{
+text-align:center;
 
-    justify-content:center;
-}
-
-.tag{
-
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.banner-content h2{
-
-    font-size:2.5rem;
-
-    max-width:none;
 }
 
 .banner-content p{
 
-    max-width:none;
-}
-
+margin:auto;
 
 }
 
-@media(max-width:600px){
+.banner-stats{
 
+justify-content:center;
 
-body{
-    padding:20px;
+flex-wrap:wrap;
+
 }
 
-.login-card{
+}
 
-    padding:30px 24px;
+@media(max-width:768px){
 
-    border-radius:24px;
+.login-banner{
+
+padding:40px 25px;
+
 }
 
 .banner-content h2{
 
-    font-size:2rem;
+font-size:2.5rem;
+
+}
+
+.login-panel{
+
+padding:25px;
+
+}
+
+.login-card{
+
+padding:35px 25px;
+
 }
 
 .form-options{
 
-    flex-direction:column;
-    align-items:flex-start;
+flex-direction:column;
 
-    gap:12px;
+gap:15px;
+
+align-items:flex-start;
+
 }
 
+}
+
+@media(max-width:500px){
+
+.banner-content h2{
+
+font-size:2rem;
+
+}
+
+.brand{
+
+justify-content:center;
+
+}
+
+.banner-stats{
+
+flex-direction:column;
+
+}
+
+.stat{
+
+width:100%;
+
+}
+
+.card-header h2{
+
+font-size:1.7rem;
+
+}
 
 }
