@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <!-- =====================================
+         CONFIGURAÇÕES BÁSICAS
+    ====================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Didatik • Entrar</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="../assets/css/login.css">
+
+<!-- Fonte -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+
+</head>
+<body>
+
+
+<!-- =====================================
+     CONTAINER PRINCIPAL
+====================================== -->
+<div class="login-container">
+
+    <!-- =====================================
+         ÁREA INSTITUCIONAL
+    ====================================== -->
+    <section class="login-banner">
+
+        <!-- Logo -->
+        <div class="brand">
+
+            <div class="logo">
+                DT
+            </div>
+
+            <h1>Didatik</h1>
+
+        </div>
+
+        <!-- Mensagem principal -->
+        <div class="banner-content">
+
+            <span class="tag">
+                Plataforma para Professores
+            </span>
+
+            <h2>
+                Organize aulas, disciplinas e materiais em um único lugar.
+            </h2>
+
+            <p>
+                Crie conteúdos, organize disciplinas, publique materiais
+                didáticos e mantenha toda a sua estrutura de ensino
+                organizada através de uma plataforma moderna, simples
+                e intuitiva.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         PAINEL DE LOGIN
+    ====================================== -->
+    <section class="login-panel">
+
+        <div class="login-card">
+
+            <!-- Cabeçalho -->
+            <div class="card-header">
+
+                <h2>
+                    Bem-vindo de volta
+                </h2>
+
+                <p>
+                    Entre para acessar seu painel de gerenciamento.
+                </p>
+
+            </div>
+
+            <!-- =====================================
+                 FORMULÁRIO
+            ====================================== -->
+            <form id="loginForm">
+
+                <!-- E-mail -->
+                <div class="input-group">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+                <!-- Senha -->
+                <div class="input-group">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+                <!-- Opções -->
+                <div class="form-options">
+
+                    <label class="remember">
+
+                        <input type="checkbox">
+
+                        <span>
+                            Lembrar-me
+                        </span>
+
+                    </label>
+
+                    <a href="#" class="forgot-password">
+                        Esqueci minha senha
+                    </a>
+
+                </div>
+
+                <!-- Botão Entrar -->
+                <button
+                    type="submit"
+                    class="btn-login"
+                >
+                    Entrar
+                </button>
+
+            </form>
+
+            <!-- =====================================
+                 DIVISOR
+            ====================================== -->
+            <div class="divider">
+                <span>ou</span>
+            </div>
+
+            <!-- =====================================
+                 LOGIN COM GOOGLE
+            ====================================== -->
+            <button
+                id="googleLogin"
+                class="btn-google"
+            >
+
+                <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 48 48"
+                >
+                    <path
+                        fill="#FFC107"
+                        d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"
+                    />
+                </svg>
+
+                Entrar com Google
+
+            </button>
+
+            <!-- =====================================
+                 INFORMAÇÃO DE ACESSO
+            ====================================== -->
+            <div class="access-info">
+
+                <p>
+                    O acesso à plataforma é liberado após a contratação
+                    do serviço.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- =====================================
+     JAVASCRIPT
+====================================== -->
+<script type="module" src="../assets/js/login.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+didatik/
+│
+├── index.html
+│
+├── assets/
+│   ├── css/
+│   │   ├── style.css
+│   │   ├── home.css
+│   │   ├── dashboard.css
+│   │   ├── aula.css
+│   │   └── components.css
+│   │
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── firebase.js
+│   │   ├── auth.js
+│   │   ├── dashboard.js
+│   │   ├── busca.js
+│   │   └── aulas.js
+│   │
+│   ├── img/
+│   │   ├── logo/
+│   │   ├── banners/
+│   │   ├── icones/
+│   │   └── aulas/
+│   │
+│   └── fonts/
+│
+├── pages/
+│   ├── login.html
+│   ├── cadastro.html
+│   ├── dashboard.html
+│   ├── disciplina.html
+│   ├── aula.html
+│   ├── favoritos.html
+│   └── planos.html
+│
+├── aulas/
+│   ├── fisica/
+│   │   ├── termologia/
+│   │   ├── mecanica/
+│   │   ├── optica/
+│   │   └── eletricidade/
+│   │
+│   └── matematica/
+│       ├── funcoes/
+│       ├── geometria/
+│       ├── estatistica/
+│       └── algebra/
+│
+├── data/
+│   ├── disciplinas.json
+│   ├── aulas.json
+│   └── categorias.json
+│
+└── firebase/
+    ├── firestore.rules
+    └── firestore.indexes.json
