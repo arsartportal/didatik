@@ -40,6 +40,7 @@
     --radius:20px;
 
     --sidebar-width:280px;
+    --sidebar-collapsed:90px;
 
 }
 
@@ -79,11 +80,9 @@ body{
 
     width:var(--sidebar-width);
 
-    background:#0f172a;
+    background:#081226;
 
-    color:#fff;
-
-    padding:32px 24px;
+    color:white;
 
     position:fixed;
 
@@ -91,7 +90,89 @@ body{
     left:0;
     bottom:0;
 
-    overflow-y:auto;
+    display:flex;
+
+    flex-direction:column;
+
+    transition:.35s ease;
+
+    overflow:hidden;
+
+    z-index:1000;
+
+}
+
+.sidebar-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    gap:20px;
+
+    padding:24px;
+
+    height:90px;
+
+}
+
+.sidebar.collapsed .sidebar-top{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px 0;
+
+}
+
+.sidebar.collapsed .toggle-btn{
+
+    margin:0 auto;
+
+}
+
+.toggle-btn{
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto;
+
+    padding:0;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+    transform:translateX(10px);
+
+}
+
+.toggle-btn:hover{
+
+    background:rgba(255,255,255,.08);
 
 }
 
@@ -103,13 +184,17 @@ body{
 
     font-family:'Poppins',sans-serif;
 
-    font-size:2rem;
+    font-size:2.6rem;
 
     font-weight:800;
 
-    margin-bottom:40px;
+    color:white;
 
-    text-align:center;
+    margin:0;
+
+    line-height:1;
+
+    transition:.3s ease;
 
 }
 
@@ -119,15 +204,29 @@ body{
 
 .menu{
 
+    flex:1;
+
     display:flex;
 
     flex-direction:column;
 
-    gap:10px;
+    gap:8px;
+
+    padding:0 15px;
 
 }
 
+/* ==================================================
+   LINKS DO MENU
+================================================== */
+
 .menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
 
     text-decoration:none;
 
@@ -135,29 +234,168 @@ body{
 
     padding:14px 16px;
 
-    border-radius:12px;
+    border-radius:16px;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.3s ease;
 
     font-weight:500;
 
+    white-space:nowrap;
+
+    overflow:hidden;
+
 }
+
+/* ==================================================
+   HOVER
+================================================== */
 
 .menu a:hover{
 
     background:rgba(255,255,255,.08);
 
-    color:#fff;
+    color:#ffffff;
+
+    transform:translateX(4px);
 
 }
+
+/* ==================================================
+   ITEM ATIVO
+================================================== */
 
 .menu a.active{
 
     background:var(--primary);
 
-    color:#fff;
+    color:#ffffff;
+
+    box-shadow:
+    0 6px 20px rgba(37,99,235,.35);
+
+}
+
+/* ==================================================
+   ÍCONES
+================================================== */
+
+.icon{
+
+    min-width:26px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.2rem;
+
+}
+
+/* ==================================================
+   TEXTO
+================================================== */
+
+.text{
+
+    transition:.3s ease;
+
+}
+
+/* ==================================================
+   SIDEBAR COLAPSADA
+================================================== */
+
+.sidebar.collapsed{
+
+    width:var(--sidebar-collapsed);
+
+}
+
+/* ==================================================
+   SIDEBAR RECOLHIDA
+================================================== */
+
+.sidebar.collapsed .menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:58px;
+
+    height:58px;
+
+    margin:0 auto;
+
+    padding:0;
+
+    border-radius:16px;
+
+    gap:0;
+
+}
+
+.sidebar.collapsed .text{
+
+    opacity:0;
+
+    width:0;
+
+    overflow:hidden;
+
+}
+
+.sidebar.collapsed .icon{
+
+    margin:0;
+
+}
+
+.sidebar.collapsed .logo{
+
+    opacity:0;
+
+    width:0;
+
+    margin:0;
+
+    overflow:hidden;
+
+}
+
+/* ==================================================
+   ANIMAÇÃO DO MENU
+================================================== */
+
+.menu a{
+
+    animation:fadeMenu .3s ease;
+
+}
+
+@keyframes fadeMenu{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
 
 }
 
@@ -167,11 +405,21 @@ body{
 
 .content{
 
-    margin-left:var(--sidebar-width);
-
     width:100%;
 
+    margin-left:var(--sidebar-width);
+
     padding:32px;
+
+    transition:
+    margin-left .35s ease,
+    width .35s ease;
+
+}
+
+body.sidebar-collapsed .content{
+
+    margin-left:var(--sidebar-collapsed);
 
 }
 
@@ -797,15 +1045,49 @@ button:hover{
 
 }
 
-/* ==========================================
-LOGOUT
-========================================== */
+/* ==================================================
+   SIDEBAR FOOTER
+================================================== */
+
+.sidebar-footer{
+
+    padding:15px;
+
+    margin-top:auto;
+
+    padding:15px;
+
+    margin-top:auto;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+/* ==================================================
+   LOGOUT
+================================================== */
 
 #logoutBtn{
 
-    margin-top:20px;
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 16px;
+
+    border-radius:16px;
 
     color:#fca5a5;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+    font-weight:500;
 
 }
 

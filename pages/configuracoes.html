@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Configurações | Didatik</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="../assets/css/configuracoes.css">
+
+</head>
+
+<body>
+
+    <main class="settings-page">
+
+        <!-- =====================================
+        HEADER
+        ====================================== -->
+
+        <section class="settings-header">
+
+            <h1>
+                ⚙️ Configurações
+            </h1>
+
+            <p>
+                Gerencie sua conta, preferências
+                e recursos da plataforma.
+            </p>
+
+        </section>
+
+        <!-- =====================================
+        PERFIL
+        ====================================== -->
+
+        <section class="settings-card">
+
+            <h2>
+                👤 Perfil
+            </h2>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Nome</label>
+
+                    <input
+                        type="text"
+                        id="nome">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>E-mail</label>
+
+                    <input
+                        type="email"
+                        id="email">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Escola</label>
+
+                    <input
+                        type="text"
+                        id="escola">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Disciplina</label>
+
+                    <input
+                        type="text"
+                        id="disciplina">
+
+                </div>
+
+            </div>
+
+            <button id="salvarPerfil">
+                Salvar Perfil
+            </button>
+
+        </section>
+
+        <!-- =====================================
+        SEGURANÇA
+        ====================================== -->
+
+        <section class="settings-card">
+
+            <h2>
+                🔐 Segurança
+            </h2>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Nova Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="novaSenha">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Confirmar Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmarSenha">
+
+                </div>
+
+            </div>
+
+            <button id="alterarSenha">
+                Alterar Senha
+            </button>
+
+        </section>
+
+        <!-- =====================================
+        APARÊNCIA
+        ====================================== -->
+
+        <section class="settings-card">
+
+            <h2>
+                🎨 Aparência
+            </h2>
+
+            <label class="switch-row">
+
+                Tema Escuro
+
+                <input
+                    type="checkbox"
+                    id="temaEscuro">
+
+            </label>
+
+            <label class="switch-row">
+
+                Sidebar recolhida
+
+                <input
+                    type="checkbox"
+                    id="sidebarRecolhida">
+
+            </label>
+
+        </section>
+
+        <!-- =====================================
+        NOTIFICAÇÕES
+        ====================================== -->
+
+        <section class="settings-card">
+
+            <h2>
+                🔔 Notificações
+            </h2>
+
+            <label class="switch-row">
+
+                Receber novidades
+
+                <input
+                    type="checkbox"
+                    checked>
+
+            </label>
+
+            <label class="switch-row">
+
+                Receber atualizações
+
+                <input
+                    type="checkbox"
+                    checked>
+
+            </label>
+
+        </section>
+
+        <!-- =====================================
+        IA DIDATIK
+        ====================================== -->
+
+        <section class="settings-card">
+
+            <h2>
+                🤖 IA Didatik
+            </h2>
+
+            <label class="switch-row">
+
+                Salvar histórico
+
+                <input
+                    type="checkbox"
+                    checked>
+
+            </label>
+
+            <label class="switch-row">
+
+                Sugestões automáticas
+
+                <input
+                    type="checkbox"
+                    checked>
+
+            </label>
+
+        </section>
+
+        <!-- =====================================
+        PLANO
+        ====================================== -->
+
+        <section class="settings-card">
+
+            <h2>
+                💎 Plano
+            </h2>
+
+            <p>
+                Plano atual:
+                <strong>
+                    Didatik Premium
+                </strong>
+            </p>
+
+            <button>
+                Gerenciar Plano
+            </button>
+
+        </section>
+
+        <!-- =====================================
+        DADOS
+        ====================================== -->
+
+        <section class="settings-card">
+
+            <h2>
+                ☁️ Dados
+            </h2>
+
+            <button>
+                Exportar Dados
+            </button>
+
+        </section>
+
+        <!-- =====================================
+        ZONA DE PERIGO
+        ====================================== -->
+
+        <section
+            class="settings-card danger">
+
+            <h2>
+                🚨 Zona de Perigo
+            </h2>
+
+            <p>
+                Esta ação é permanente.
+            </p>
+
+            <button class="danger-btn">
+
+                Excluir Conta
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <script
+        type="module"
+        src="../assets/js/configuracoes.js">
+    </script>
+
+</body>
+
+</html>

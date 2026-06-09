@@ -1,486 +1,522 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
 
+    <!-- =========================================
+    META TAGS
+    ========================================== -->
+    <meta charset="UTF-8">
 
-<!-- ========================================= -->
-<!-- META TAGS -->
-<!-- ========================================= -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <!-- =========================================
+    TÍTULO
+    ========================================== -->
+    <title>Dashboard | Didatik</title>
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <!-- =========================================
+    GOOGLE FONTS
+    ========================================== -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-<!-- ========================================= -->
-<!-- TÍTULO -->
-<!-- ========================================= -->
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-<title>Dashboard | Didatik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+          rel="stylesheet">
 
-<!-- ========================================= -->
-<!-- GOOGLE FONTS -->
-<!-- ========================================= -->
-
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
-      rel="stylesheet">
-
-<!-- ========================================= -->
-<!-- CSS -->
-<!-- ========================================= -->
-
-<link rel="stylesheet"
-      href="../assets/css/dashboard.css">
-
+    <!-- =========================================
+    CSS
+    ========================================== -->
+    <link rel="stylesheet"
+          href="../assets/css/dashboard.css">
 
 </head>
 
 <body>
 
+    <!-- =========================================
+    CONTAINER PRINCIPAL
+    ========================================== -->
+    <div class="dashboard">
 
-<div class="dashboard">
+        <!-- =========================================
+        SIDEBAR
+        ========================================== -->
+        <aside
+            class="sidebar"
+            id="sidebar">
 
-    <!-- ========================================= -->
-    <!-- SIDEBAR -->
-    <!-- ========================================= -->
+            <!-- =====================================
+            TOPO DA SIDEBAR
+            ====================================== -->
+            <div class="sidebar-top">
 
-    <aside class="sidebar">
+                <button
+                    id="toggleSidebar"
+                    class="toggle-btn">
 
-        <div class="logo">
-            Didatik
-        </div>
+                    ☰
 
-       <nav class="menu">
+                </button>
 
-    <a class="active">
-        🏠 Dashboard
-    </a>
+                <div class="logo">
+                    Didatik
+                </div>
 
-    <a>
-        📚 Disciplinas
-    </a>
+            </div>
 
-    <a>
-        🎯 Simulados
-    </a>
+            <!-- =====================================
+            MENU DE NAVEGAÇÃO
+            ====================================== -->
+            <nav class="menu">
 
-    <a>
-        ❤️ Favoritos
-    </a>
+                <a class="active">
 
-    <a>
-        🔥 Mais acessadas
-    </a>
+                    <span class="icon">🏠</span>
+                    <span class="text">Dashboard</span>
 
-    <a>
-        🆕 Novidades
-    </a>
+                </a>
 
-    <a>
-        🤖 IA Didatik
-    </a>
+                <a>
 
-    <a>
-        ⚙️ Configurações
-    </a>
+                    <span class="icon">📚</span>
+                    <span class="text">Disciplinas</span>
+
+                </a>
+
+                <a>
+
+                    <span class="icon">🎯</span>
+                    <span class="text">Simulados</span>
+
+                </a>
+
+                <a>
+
+                    <span class="icon">❤️</span>
+                    <span class="text">Favoritos</span>
+
+                </a>
+
+                <a>
+
+                    <span class="icon">🔥</span>
+                    <span class="text">Mais acessadas</span>
+
+                </a>
+
+                <a>
+
+                    <span class="icon">🆕</span>
+                    <span class="text">Novidades</span>
+
+                </a>
+
+                <a>
+
+                    <span class="icon">🤖</span>
+                    <span class="text">IA Didatik</span>
+
+                </a>
+
+                <a>
+
+                    <span class="icon">⚙️</span>
+                    <span class="text">Configurações</span>
+
+                </a>
+
+            </nav>
+
+            <!-- =====================================
+            BOTÃO SAIR
+            ====================================== -->
+            <div class="sidebar-footer">
 
     <a id="logoutBtn">
-        🚪 Sair
+
+        <span class="icon">🚪</span>
+
+        <span class="text">Sair</span>
+
     </a>
-
-</nav>
-
-    </aside>
-
-    <!-- ========================================= -->
-    <!-- CONTEÚDO PRINCIPAL -->
-    <!-- ========================================= -->
-
-    <main class="content">
-
-        <!-- ========================================= -->
-        <!-- TOPBAR -->
-        <!-- ========================================= -->
-
-        <header class="topbar">
-
-            <div class="search-box">
-
-                <input
-                    type="text"
-                    placeholder="Pesquisar aulas, disciplinas ou conteúdos...">
-
-            </div>
-
-            <div class="user-area">
-
-                <div class="user-info">
-
-                    <span>
-                        Bem-vindo
-                    </span>
-
-                    <strong id="nomeUsuario">
-                        Professor
-                    </strong>
-
-                </div>
-
-                <div class="avatar">
-                    👨‍🏫
-                </div>
-
-            </div>
-
-        </header>
-
-        <!-- ========================================= -->
-        <!-- HERO -->
-        <!-- ========================================= -->
-
-        <section class="hero">
-
-            <div>
-
-                <span class="badge">
-                    Plataforma Premium
-                </span>
-
-                <h1>
-                    Bem-vindo à Didatik
-                </h1>
-
-                <p>
-                    Sua plataforma completa para
-                    planejar, ensinar e inspirar.
-                </p>
-
-            </div>
-
-        </section>
-
-        <!-- ========================================= -->
-        <!-- ESTATÍSTICAS -->
-        <!-- ========================================= -->
-
-        <section class="stats-section">
-
-            <div class="stats-grid">
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        📚
-                    </div>
-
-                    <span>Disciplinas</span>
-
-                    <h3 id="totalDisciplinas">
-                        0
-                    </h3>
-
-                </div>
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        🎓
-                    </div>
-
-                    <span>Aulas</span>
-
-                    <h3 id="totalAulas">
-                        0
-                    </h3>
-
-                </div>
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        ❤️
-                    </div>
-
-                    <span>Favoritos</span>
-
-                    <h3 id="totalFavoritos">
-                        0
-                    </h3>
-
-                </div>
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        🔥
-                    </div>
-
-                    <span>Acessos</span>
-
-                    <h3 id="totalAcessos">
-                        0
-                    </h3>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ========================================= -->
-        <!-- CONTINUE DE ONDE PAROU -->
-        <!-- ========================================= -->
-
-        <section>
-
-            <div class="section-header">
-
-                <h2>
-                    Continue de onde parou
-                </h2>
-
-            </div>
-
-            <div class="continue-card">
-
-                <div>
-
-                    <span>
-                        Física
-                    </span>
-
-                    <h3>
-                        Dilatação Térmica
-                    </h3>
-
-                    <p>
-                        Aula • Infográfico • Quiz
-                    </p>
-
-                </div>
-
-                <button>
-                    Continuar
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- ========================================= -->
-        <!-- DISCIPLINAS -->
-        <!-- ========================================= -->
-
-        <section>
-
-            <div class="section-header">
-
-                <h2>
-                    Disciplinas
-                </h2>
-
-            </div>
-
-            <div class="disciplinas-grid">
-
-                <div class="disciplina-card">
-
-                    <div class="emoji">
-                        📚
-                    </div>
-
-                    <h3>
-                        Física
-                    </h3>
-
-                    <p>
-                        Mecânica, Termologia,
-                        Óptica e Eletricidade.
-                    </p>
-
-                </div>
-
-                <div class="disciplina-card">
-
-                    <div class="emoji">
-                        📐
-                    </div>
-
-                    <h3>
-                        Matemática
-                    </h3>
-
-                    <p>
-                        Álgebra, Geometria,
-                        Estatística e Funções.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ========================================= -->
-        <!-- AULAS RECENTES -->
-        <!-- ========================================= -->
-
-        <section>
-
-            <div class="section-header">
-
-                <h2>
-                    Últimas aulas
-                </h2>
-
-            </div>
-
-            <div class="aulas-grid">
-
-                <article class="aula-card">
-
-                    <span>
-                        Física
-                    </span>
-
-                    <h3>
-                        Circuitos Elétricos
-                    </h3>
-
-                </article>
-
-                <article class="aula-card">
-
-                    <span>
-                        Física
-                    </span>
-
-                    <h3>
-                        Leis de Newton
-                    </h3>
-
-                </article>
-
-                <article class="aula-card">
-
-                    <span>
-                        Matemática
-                    </span>
-
-                    <h3>
-                        Função Afim
-                    </h3>
-
-                </article>
-
-                <article class="aula-card">
-
-                    <span>
-                        Matemática
-                    </span>
-
-                    <h3>
-                        Porcentagem
-                    </h3>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- ========================================= -->
-        <!-- NOVIDADES -->
-        <!-- ========================================= -->
-
-        <section>
-
-            <div class="section-header">
-
-                <h2>
-                    Novidades
-                </h2>
-
-            </div>
-
-            <div class="novidades">
-
-                <div class="novidade">
-                    🆕 Novos infográficos adicionados
-                </div>
-
-                <div class="novidade">
-                    🆕 Novas questões estilo ENEM
-                </div>
-
-                <div class="novidade">
-                    🆕 Novas atividades para EJA
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ========================================= -->
-        <!-- PLANO -->
-        <!-- ========================================= -->
-
-        <section>
-
-            <div class="section-header">
-
-                <h2>
-                    Seu Plano
-                </h2>
-
-            </div>
-
-            <div class="plano-card">
-
-                <div>
-
-                    <span class="plano-badge">
-                        PREMIUM
-                    </span>
-
-                    <h3>
-                        Didatik Premium
-                    </h3>
-
-                    <p>
-                        Acesso completo às aulas,
-                        simulados, IA Didatik,
-                        infográficos e materiais.
-                    </p>
-
-                </div>
-
-                <button>
-                    Gerenciar Plano
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
 
 </div>
 
-<script
-    type="module"
-    src="../assets/js/dashboard.js">
-</script>
+        </aside>
 
+        <!-- =========================================
+        CONTEÚDO PRINCIPAL
+        ========================================== -->
+        <main class="content">
+
+            <!-- =====================================
+            TOPBAR
+            ====================================== -->
+            <header class="topbar">
+
+                <!-- PESQUISA -->
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        placeholder="Pesquisar aulas, disciplinas ou conteúdos...">
+
+                </div>
+
+                <!-- USUÁRIO -->
+                <div class="user-area">
+
+                    <div class="user-info">
+
+                        <span>
+                            Bem-vindo
+                        </span>
+
+                        <strong id="nomeUsuario">
+                            Professor
+                        </strong>
+
+                    </div>
+
+                    <div class="avatar">
+                        👨‍🏫
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- =====================================
+            HERO
+            ====================================== -->
+            <section class="hero">
+
+                <div>
+
+                    <span class="badge">
+                        Plataforma Premium
+                    </span>
+
+                    <h1>
+                        Bom dia, Professor
+                    </h1>
+
+                    <p>
+                        Sua plataforma completa para
+                        planejar, ensinar e inspirar.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- =====================================
+            ESTATÍSTICAS
+            ====================================== -->
+            <section class="stats-section">
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📚
+                        </div>
+
+                        <span>Disciplinas</span>
+
+                        <h3 id="totalDisciplinas">
+                            0
+                        </h3>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            🎓
+                        </div>
+
+                        <span>Aulas</span>
+
+                        <h3 id="totalAulas">
+                            0
+                        </h3>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ❤️
+                        </div>
+
+                        <span>Favoritos</span>
+
+                        <h3 id="totalFavoritos">
+                            0
+                        </h3>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            🔥
+                        </div>
+
+                        <span>Acessos</span>
+
+                        <h3 id="totalAcessos">
+                            0
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- =====================================
+            CONTINUE DE ONDE PAROU
+            ====================================== -->
+            <section>
+
+                <div class="section-header">
+
+                    <h2>
+                        Continue de onde parou
+                    </h2>
+
+                </div>
+
+                <div class="continue-card">
+
+                    <div>
+
+                        <span>
+                            Física
+                        </span>
+
+                        <h3>
+                            Dilatação Térmica
+                        </h3>
+
+                        <p>
+                            Aula • Infográfico • Quiz
+                        </p>
+
+                    </div>
+
+                    <button>
+                        Continuar
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- =====================================
+            DISCIPLINAS
+            ====================================== -->
+            <section>
+
+                <div class="section-header">
+
+                    <h2>
+                        Disciplinas
+                    </h2>
+
+                </div>
+
+                <div class="disciplinas-grid">
+
+                    <div class="disciplina-card">
+
+                        <div class="emoji">
+                            📚
+                        </div>
+
+                        <h3>
+                            Física
+                        </h3>
+
+                        <p>
+                            Mecânica, Termologia,
+                            Óptica e Eletricidade.
+                        </p>
+
+                    </div>
+
+                    <div class="disciplina-card">
+
+                        <div class="emoji">
+                            📐
+                        </div>
+
+                        <h3>
+                            Matemática
+                        </h3>
+
+                        <p>
+                            Álgebra, Geometria,
+                            Estatística e Funções.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- =====================================
+            ÚLTIMAS AULAS
+            ====================================== -->
+            <section>
+
+                <div class="section-header">
+
+                    <h2>
+                        Últimas aulas
+                    </h2>
+
+                </div>
+
+                <div class="aulas-grid">
+
+                    <article class="aula-card">
+
+                        <span>Física</span>
+
+                        <h3>
+                            Circuitos Elétricos
+                        </h3>
+
+                    </article>
+
+                    <article class="aula-card">
+
+                        <span>Física</span>
+
+                        <h3>
+                            Leis de Newton
+                        </h3>
+
+                    </article>
+
+                    <article class="aula-card">
+
+                        <span>Matemática</span>
+
+                        <h3>
+                            Função Afim
+                        </h3>
+
+                    </article>
+
+                    <article class="aula-card">
+
+                        <span>Matemática</span>
+
+                        <h3>
+                            Porcentagem
+                        </h3>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =====================================
+            NOVIDADES
+            ====================================== -->
+            <section>
+
+                <div class="section-header">
+
+                    <h2>
+                        Novidades
+                    </h2>
+
+                </div>
+
+                <div class="novidades">
+
+                    <div class="novidade">
+                        🆕 Novos infográficos adicionados
+                    </div>
+
+                    <div class="novidade">
+                        🆕 Novas questões estilo ENEM
+                    </div>
+
+                    <div class="novidade">
+                        🆕 Novas atividades para EJA
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- =====================================
+            PLANO
+            ====================================== -->
+            <section>
+
+                <div class="section-header">
+
+                    <h2>
+                        Seu Plano
+                    </h2>
+
+                </div>
+
+                <div class="plano-card">
+
+                    <div>
+
+                        <span class="plano-badge">
+                            PREMIUM
+                        </span>
+
+                        <h3>
+                            Didatik Premium
+                        </h3>
+
+                        <p>
+                            Acesso completo às aulas,
+                            simulados, IA Didatik,
+                            infográficos e materiais.
+                        </p>
+
+                    </div>
+
+                    <button>
+                        Gerenciar Plano
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+    JAVASCRIPT
+    ========================================== -->
+    <script
+        type="module"
+        src="../assets/js/dashboard.js">
+    </script>
 
 </body>
 

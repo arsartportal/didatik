@@ -38,6 +38,8 @@ function iniciarDashboard(){
 
     atualizarSaudacao();
 
+    configurarSidebar();
+
     atualizarData();
 
     iniciarAnimacoes();
@@ -113,34 +115,44 @@ DATA
 
 function atualizarData(){
 
+    const hero =
+    document.querySelector(".hero");
 
-const hero =
-document.querySelector(".hero");
+    if(!hero) return;
 
-if(!hero) return;
-
-const data =
-new Date().toLocaleDateString(
-    "pt-BR",
-    {
-        weekday:"long",
-        day:"2-digit",
-        month:"long",
-        year:"numeric"
+    if(
+        document.querySelector(
+            ".dashboard-date"
+        )
+    ){
+        return;
     }
-);
 
-const elemento =
-document.createElement("small");
+    const data =
+    new Date().toLocaleDateString(
+        "pt-BR",
+        {
+            weekday:"long",
+            day:"2-digit",
+            month:"long",
+            year:"numeric"
+        }
+    );
 
-elemento.className =
-"dashboard-date";
+    const elemento =
+    document.createElement(
+        "small"
+    );
 
-elemento.textContent =
-data;
+    elemento.className =
+    "dashboard-date";
 
-hero.appendChild(elemento);
+    elemento.textContent =
+    data;
 
+    hero.appendChild(
+        elemento
+    );
 
 }
 
@@ -205,35 +217,33 @@ MENU
 
 function configurarMenu(){
 
+    const links =
+    document.querySelectorAll(
+        ".menu a"
+    );
 
-const links =
-document.querySelectorAll(
-    ".menu a"
-);
+    links.forEach(link=>{
 
-links.forEach(link=>{
+        link.addEventListener(
+            "click",
+            ()=>{
 
-    link.addEventListener(
-        "click",
-        ()=>{
+                links.forEach(item=>{
 
-            links.forEach(item=>{
+                    item.classList.remove(
+                        "active"
+                    );
 
-                item.classList.remove(
+                });
+
+                link.classList.add(
                     "active"
                 );
 
-            });
+            }
+        );
 
-            link.classList.add(
-                "active"
-            );
-
-        }
-    );
-
-});
-
+    });
 
 }
 
@@ -379,34 +389,38 @@ BUSCA
 
 function configurarBusca(){
 
+    const campo =
+    document.querySelector(
+        ".search-box input"
+    );
 
-const campo =
-document.querySelector(
-    ".search-box input"
-);
+    if(!campo) return;
 
-if(!campo) return;
+    campo.addEventListener(
+        "keyup",
+        (e)=>{
 
-campo.addEventListener(
-    "keyup",
-    (e)=>{
+            const termo =
+            e.target.value.trim();
 
-        const termo =
-        e.target.value.trim();
+            if(
+                termo.length >= 3
+            ){
 
-        if(
-            termo.length >= 3
-        ){
+                if(
+                    window.didatik
+                ){
 
-            didatik.buscar(
-                termo
-            );
+                    window.didatik.buscar(
+                        termo
+                    );
+
+                }
+
+            }
 
         }
-
-    }
-);
-
+    );
 
 }
 
@@ -468,35 +482,78 @@ if(acessos){
 
 }
 
+
 /* ==========================================
-PARALLAX HERO
+SIDEBAR RETRÁTIL
 ========================================== */
 
-const hero =
-document.querySelector(".hero");
+function configurarSidebar(){
 
-window.addEventListener(
-"mousemove",
-(e)=>{
+    const sidebar =
+    document.getElementById(
+        "sidebar"
+    );
 
+    const toggle =
+    document.getElementById(
+        "toggleSidebar"
+    );
 
-    if(!hero) return;
+    if(
+        !sidebar ||
+        !toggle
+    ) return;
 
-    const x =
-    (window.innerWidth / 2
-    - e.clientX) / 120;
+    const estado =
+    localStorage.getItem(
+        "sidebar"
+    );
 
-    const y =
-    (window.innerHeight / 2
-    - e.clientY) / 120;
+    if(
+        estado ===
+        "collapsed"
+    ){
 
-    hero.style.transform =
-    `translate(${x}px, ${y}px)`;
+        sidebar.classList.add(
+            "collapsed"
+        );
+
+        document.body.classList.add(
+            "sidebar-collapsed"
+        );
+
+    }
+
+    toggle.addEventListener(
+        "click",
+        ()=>{
+
+            sidebar.classList.toggle(
+                "collapsed"
+            );
+
+            document.body.classList.toggle(
+                "sidebar-collapsed"
+            );
+
+            localStorage.setItem(
+
+                "sidebar",
+
+                sidebar.classList.contains(
+                    "collapsed"
+                )
+
+                ? "collapsed"
+
+                : "expanded"
+
+            );
+
+        }
+    );
 
 }
-
-
-);
 
 /* ==========================================
 API GLOBAL
