@@ -1,0 +1,390 @@
+/* ==========================================================
+   DISCIPLINAS.CSS
+   Página de Disciplinas - Didatik
+========================================================== */
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.disciplinas-page{
+    width:100%;
+    padding:30px;
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+    display:flex;
+    align-items:center;
+    gap:24px;
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 10px 30px rgba(15,23,42,.05);
+
+    margin-bottom:30px;
+}
+
+.hero-icon{
+    width:90px;
+    height:90px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:3rem;
+
+    border-radius:24px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:white;
+}
+
+.hero h1{
+    font-size:2.2rem;
+    font-weight:800;
+    color:#0f172a;
+
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#64748b;
+    line-height:1.7;
+    max-width:700px;
+}
+
+/* ==========================================================
+   BADGE
+========================================================== */
+
+.badge{
+    display:inline-flex;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    font-size:.85rem;
+
+    font-weight:600;
+}
+
+/* ==========================================================
+   BUSCA
+========================================================== */
+
+.search-box{
+    margin-bottom:30px;
+}
+
+.search-box input{
+
+    width:100%;
+
+    height:60px;
+
+    padding:0 20px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#ffffff;
+
+    font-size:1rem;
+
+    box-shadow:
+    0 6px 20px rgba(15,23,42,.05);
+
+    outline:none;
+}
+
+.search-box input:focus{
+
+    box-shadow:
+    0 0 0 3px rgba(37,99,235,.15),
+    0 8px 24px rgba(15,23,42,.08);
+}
+
+/* ==========================================================
+   ESTATÍSTICAS
+========================================================== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+    margin-bottom:40px;
+}
+
+.stat-card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:24px;
+
+    text-align:center;
+
+    box-shadow:
+    0 8px 24px rgba(15,23,42,.05);
+}
+
+.stat-card h3{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:#2563eb;
+
+    margin-bottom:8px;
+}
+
+.stat-card p{
+
+    color:#64748b;
+
+    font-size:.95rem;
+}
+
+/* ==========================================================
+   TÍTULOS DE SEÇÃO
+========================================================== */
+
+.section-header{
+
+    margin-bottom:20px;
+}
+
+.section-header h2{
+
+    font-size:1.5rem;
+
+    color:#0f172a;
+
+    font-weight:700;
+}
+
+/* ==========================================================
+   GRID DISCIPLINAS
+========================================================== */
+
+.disciplinas-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(300px,1fr));
+
+    gap:24px;
+
+    margin-bottom:50px;
+}
+
+/* ==========================================================
+   CARD DISCIPLINA
+========================================================== */
+
+.disciplina-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    box-shadow:
+    0 10px 30px rgba(15,23,42,.05);
+
+    transition:.25s;
+
+    cursor:pointer;
+}
+
+.disciplina-card:hover{
+
+    transform:
+    translateY(-6px);
+
+    box-shadow:
+    0 15px 40px rgba(15,23,42,.10);
+}
+
+.disciplina-icon{
+
+    width:70px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:2rem;
+
+    border-radius:20px;
+
+    background:#eff6ff;
+
+    margin-bottom:18px;
+}
+
+.disciplina-card h3{
+
+    font-size:1.3rem;
+
+    color:#0f172a;
+
+    margin-bottom:10px;
+}
+
+.disciplina-card p{
+
+    color:#64748b;
+
+    line-height:1.7;
+
+    min-height:80px;
+}
+
+/* ==========================================================
+   BOTÃO
+========================================================== */
+
+.btn-disciplina{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    margin-top:20px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.btn-disciplina:hover{
+
+    transform:scale(1.02);
+}
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.cta{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 30px;
+
+    border-radius:28px;
+}
+
+.cta h2{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+}
+
+.cta p{
+
+    opacity:.9;
+
+    margin-bottom:25px;
+}
+
+.btn-primary{
+
+    background:white;
+
+    color:#2563eb;
+
+    border:none;
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width:768px){
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .hero-icon{
+
+        width:80px;
+        height:80px;
+    }
+
+    .hero h1{
+
+        font-size:1.8rem;
+    }
+
+    .disciplinas-page{
+
+        padding:20px;
+    }
+}

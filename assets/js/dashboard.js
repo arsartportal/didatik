@@ -65,6 +65,105 @@ function iniciarDashboard(){
 }
 
 /* ==========================================
+CARREGAR PÁGINAS
+========================================== */
+
+async function carregarPagina(nomePagina){
+
+    try{
+
+        const resposta =
+        await fetch(
+            `../pages/${nomePagina}.html`
+        );
+
+        if(!resposta.ok){
+
+            throw new Error(
+                `Página não encontrada: ${nomePagina}`
+            );
+
+        }
+
+        const html =
+        await resposta.text();
+
+        const container =
+        document.getElementById(
+            "page-content"
+        );
+
+        if(!container){
+
+            console.error(
+                "Container page-content não encontrado."
+            );
+
+            return;
+
+        }
+
+        container.innerHTML =
+        html;
+
+        carregarAssetsPagina(nomePagina);
+
+        
+
+    }
+
+    catch(erro){
+
+        console.error(
+            "Erro ao carregar página:",
+            erro
+        );
+
+    }
+
+}
+
+function carregarAssetsPagina(nomePagina){
+
+    // CSS
+    const cssExistente =
+    document.getElementById("pagina-css");
+
+    if(cssExistente){
+        cssExistente.remove();
+    }
+
+    const link =
+    document.createElement("link");
+
+    link.id = "pagina-css";
+    link.rel = "stylesheet";
+    link.href =
+    `../assets/css/${nomePagina}.css`;
+
+    document.head.appendChild(link);
+
+    // JS
+    const jsExistente =
+    document.getElementById("pagina-js");
+
+    if(jsExistente){
+        jsExistente.remove();
+    }
+
+    const script =
+    document.createElement("script");
+
+    script.id = "pagina-js";
+    script.type = "module";
+    script.src =
+    `../assets/js/${nomePagina}.js`;
+
+    document.body.appendChild(script);
+
+}
+
+/* ==========================================
 SAUDAÇÃO
 ========================================== */
 
@@ -226,7 +325,9 @@ function configurarMenu(){
 
         link.addEventListener(
             "click",
-            ()=>{
+            async (e)=>{
+
+                e.preventDefault();
 
                 links.forEach(item=>{
 
@@ -240,6 +341,26 @@ function configurarMenu(){
                     "active"
                 );
 
+                const pagina =
+                link.dataset.page;
+
+                if(
+                    pagina &&
+                    pagina !== "dashboard"
+                ){
+
+                    await carregarPagina(
+                        pagina
+                    );
+
+                }
+
+                else{
+
+                    window.location.reload();
+
+                }
+
             }
         );
 
@@ -247,38 +368,50 @@ function configurarMenu(){
 
 }
 
+
 /* ==========================================
 DISCIPLINAS
 ========================================== */
 
 function configurarDisciplinas(){
 
-
-const cards =
-document.querySelectorAll(
-    ".disciplina-card"
-);
-
-cards.forEach(card=>{
-
-    card.addEventListener(
-        "click",
-        ()=>{
-
-            const disciplina =
-            card.querySelector("h3")
-            ?.textContent;
-
-            console.log(
-                "Abrir disciplina:",
-                disciplina
-            );
-
-        }
+    const cards =
+    document.querySelectorAll(
+        ".disciplina-card"
     );
 
-});
+    cards.forEach(card=>{
 
+        card.addEventListener(
+            "click",
+            async ()=>{
+
+                const pagina =
+                card.dataset.page;
+
+                if(!pagina) return;
+
+                if(
+                    pagina === "fisica" ||
+                    pagina === "matematica"
+                ){
+
+                    await carregarPagina(
+                        pagina
+                    );
+
+                }else{
+
+                    alert(
+                        "Disciplina disponível em breve."
+                    );
+
+                }
+
+            }
+        );
+
+    });
 
 }
 
@@ -561,36 +694,36 @@ API GLOBAL
 
 window.didatik = {
 
+    buscar(termo){
 
-buscar(termo){
+        console.log(
+            "Buscar:",
+            termo
+        );
 
-    console.log(
-        "Buscar:",
-        termo
-    );
+    },
 
-},
+    abrirAula(id){
 
-abrirAula(id){
+        console.log(
+            "Abrir aula:",
+            id
+        );
 
-    console.log(
-        "Abrir aula:",
-        id
-    );
+    },
 
-},
+    abrirDisciplina(id){
 
-abrirDisciplina(id){
+        console.log(
+            "Abrir disciplina:",
+            id
+        );
 
-    console.log(
-        "Abrir disciplina:",
-        id
-    );
-
-}
-
+    }
 
 };
+
+window.carregarPagina = carregarPagina;
 
 /* ==========================================
 FIREBASE
