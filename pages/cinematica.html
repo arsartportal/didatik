@@ -1,0 +1,658 @@
+<!-- ==========================================================
+     CINEMÁTICA
+========================================================== -->
+
+<div class="cinematica-page">
+
+    <!-- ========================================= -->
+    <!-- HERO -->
+    <!-- ========================================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+
+                🚗 Cinemática
+
+            </h1>
+
+            <p>
+
+                Estudo dos movimentos sem analisar suas causas.
+                Explore simulações, gráficos, exercícios e
+                calculadoras interativas.
+
+            </p>
+
+        </div>
+
+    </section>
+
+<!-- ========================================= -->
+<!-- SIMULADOR -->
+<!-- ========================================= -->
+
+<!-- ========================================= -->
+<!-- TIPO DE MOVIMENTO -->
+<!-- ========================================= -->
+
+<section>
+
+    <div class="tipo-movimento-card">
+
+        <div>
+
+            <h3>
+
+                Tipo de Movimento
+
+            </h3>
+
+            <p>
+
+                Escolha um modelo físico para simular.
+
+            </p>
+
+        </div>
+
+        <select id="tipoMovimento">
+
+            <option value="mru">
+
+                Movimento Retilíneo Uniforme
+
+            </option>
+
+            <option value="mruv">
+
+                Movimento Retilíneo Uniformemente Variado
+
+            </option>
+
+            <option value="queda">
+
+                Queda Livre
+
+            </option>
+
+            <option value="lancamento">
+
+                Lançamento Oblíquo
+
+            </option>
+
+        </select>
+
+    </div>
+
+</section>
+
+<section class="simulador-section">
+
+    <div class="section-header">
+
+        <h2>
+
+            Simulador de Movimento
+
+        </h2>
+
+    </div>
+
+    <div class="simulador-card">
+
+        <div class="pista">
+
+            <div id="carro">
+
+                🚗
+
+            </div>
+
+            <div class="chegada">
+
+                🏁
+
+            </div>
+
+        </div>
+
+        <!-- CONTROLES -->
+
+        <div class="painel-controle">
+
+            <div class="controle-velocidade">
+
+                <label>
+
+                    Velocidade:
+                    <strong id="valorControleVelocidade">
+
+                        10
+
+                    </strong>
+
+                    m/s
+
+                </label>
+
+                <input
+                    type="range"
+                    id="controleVelocidade"
+                    min="1"
+                    max="30"
+                    value="10">
+
+            </div>
+
+            <div class="botoes-simulador">
+
+                <button id="btnPlay">
+
+                    ▶ Play
+
+                </button>
+
+                <button id="btnPause">
+
+                    ⏸ Pause
+
+                </button>
+
+                <button id="btnStop">
+
+                    ⏹ Stop
+
+                </button>
+
+                <button id="btnReset">
+
+                    ↺ Reiniciar
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- DADOS -->
+
+        <div class="dados">
+
+            <div class="dado">
+
+                <span>
+
+                    Posição
+
+                </span>
+
+                <strong id="valorPosicao">
+
+                    0 m
+
+                </strong>
+
+            </div>
+
+            <div class="dado">
+
+                <span>
+
+                    Tempo
+
+                </span>
+
+                <strong id="valorTempo">
+
+                    0 s
+
+                </strong>
+
+            </div>
+
+            <div class="dado">
+
+                <span>
+
+                    Velocidade
+
+                </span>
+
+                <strong id="valorVelocidade">
+
+                    10 m/s
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- DESAFIO DIDATIK -->
+<!-- ========================================= -->
+
+<section>
+
+    <div class="desafio-card">
+
+        <div class="desafio-icon">
+
+            🎯
+
+        </div>
+
+        <div class="desafio-info">
+
+            <h3>
+
+                Desafio Didatik
+
+            </h3>
+
+            <p>
+
+                Faça o carro percorrer
+                100 metros em exatamente
+                8 segundos.
+
+            </p>
+
+        </div>
+
+        <button
+            id="verificarDesafio">
+
+            Verificar Desafio
+
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- ========================================= -->
+<!-- LABORATÓRIO DE GRÁFICOS -->
+<!-- ========================================= -->
+
+<section>
+
+    <div class="section-header">
+
+        <h2>
+
+            Laboratório de Gráficos
+
+        </h2>
+
+    </div>
+
+    <div class="grafico-card">
+
+        <div class="grafico-topo">
+
+            <div>
+
+                <h3>
+
+                    Análise do Movimento
+
+                </h3>
+
+                <p>
+
+                    Observe o comportamento das grandezas físicas em tempo real.
+
+                </p>
+
+            </div>
+
+            <div class="grafico-tabs">
+
+                <button
+                    class="grafico-tab active"
+                    data-grafico="st">
+
+                    S × T
+
+                </button>
+
+                <button
+                    class="grafico-tab"
+                    data-grafico="vt">
+
+                    V × T
+
+                </button>
+
+                <button
+                    class="grafico-tab"
+                    data-grafico="at">
+
+                    A × T
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="grafico-container">
+
+            <canvas
+                id="graficoMovimento">
+
+            </canvas>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ========================================= -->
+    <!-- CALCULADORA MRU -->
+    <!-- ========================================= -->
+
+    <section>
+
+        <div class="section-header">
+
+            <h2>
+
+                Calculadora MRU
+
+            </h2>
+
+        </div>
+
+        <div class="calculadora-card">
+
+            <div class="campo">
+
+                <label>
+
+                    Distância (m)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="distanciaMRU">
+
+            </div>
+
+            <div class="campo">
+
+                <label>
+
+                    Tempo (s)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="tempoMRU">
+
+            </div>
+
+            <button id="btnCalcularMRU">
+
+                Calcular
+
+            </button>
+
+            <div id="resultadoMRU">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- TIPOS DE MOVIMENTO -->
+    <!-- ========================================= -->
+
+    <section>
+
+        <div class="section-header">
+
+            <h2>
+
+                Tipos de Movimento
+
+            </h2>
+
+        </div>
+
+        <div class="movimentos-grid">
+
+    <article
+        class="movimento-card"
+        data-movimento="mru">
+
+        <div class="movimento-icon">
+
+            🚗
+
+        </div>
+
+        <h3>
+
+            MRU
+
+        </h3>
+
+        <p>
+
+            Velocidade constante.
+
+        </p>
+
+    </article>
+
+    <article
+        class="movimento-card"
+        data-movimento="mruv">
+
+        <div class="movimento-icon">
+
+            📈
+
+        </div>
+
+        <h3>
+
+            MRUV
+
+        </h3>
+
+        <p>
+
+            Aceleração constante.
+
+        </p>
+
+    </article>
+
+    <article
+        class="movimento-card"
+        data-movimento="queda">
+
+        <div class="movimento-icon">
+
+            🍎
+
+        </div>
+
+        <h3>
+
+            Queda Livre
+
+        </h3>
+
+        <p>
+
+            Movimento sob ação da gravidade.
+
+        </p>
+
+    </article>
+
+    <article
+        class="movimento-card"
+        data-movimento="lancamento">
+
+        <div class="movimento-icon">
+
+            🎯
+
+        </div>
+
+        <h3>
+
+            Lançamento Oblíquo
+
+        </h3>
+
+        <p>
+
+            Movimento bidimensional.
+
+        </p>
+
+    </article>
+
+</div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- EXERCÍCIO INTERATIVO -->
+    <!-- ========================================= -->
+
+    <section>
+
+        <div class="section-header">
+
+            <h2>
+
+                Exercício Rápido
+
+            </h2>
+
+        </div>
+
+        <div class="quiz-card">
+
+            <h3>
+
+                Um carro percorre 120 m em 15 s.
+                Qual é sua velocidade?
+
+            </h3>
+
+            <div class="alternativas">
+
+                <button
+                    class="alternativa"
+                    data-correta="false">
+
+                    6 m/s
+
+                </button>
+
+                <button
+                    class="alternativa"
+                    data-correta="true">
+
+                    8 m/s
+
+                </button>
+
+                <button
+                    class="alternativa"
+                    data-correta="false">
+
+                    10 m/s
+
+                </button>
+
+                <button
+                    class="alternativa"
+                    data-correta="false">
+
+                    12 m/s
+
+                </button>
+
+            </div>
+
+            <div id="resultadoQuiz">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- RESUMO -->
+    <!-- ========================================= -->
+
+    <section>
+
+        <div class="section-header">
+
+            <h2>
+
+                Resumo Visual
+
+            </h2>
+
+        </div>
+
+        <div class="resumo-card">
+
+            <ul>
+
+                <li>
+
+                    MRU → velocidade constante
+
+                </li>
+
+                <li>
+
+                    MRUV → aceleração constante
+
+                </li>
+
+                <li>
+
+                    Queda Livre → gravidade
+
+                </li>
+
+                <li>
+
+                    Lançamentos → trajetória parabólica
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+</div>

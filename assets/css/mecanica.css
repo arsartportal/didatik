@@ -1,0 +1,285 @@
+/* ==========================================================
+   MECANICA.CSS
+========================================================== */
+
+.mecanica-page{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:32px;
+
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.mecanica-page .hero{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:white;
+
+    padding:32px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 10px 30px rgba(
+            37,
+            99,
+            235,
+            .25
+        );
+
+}
+
+.mecanica-page .hero h1{
+
+    margin:0;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.mecanica-page .hero p{
+
+    margin-top:12px;
+
+    opacity:.95;
+
+    line-height:1.6;
+
+}
+
+/* ==========================================================
+   BUSCA
+========================================================== */
+
+.mecanica-page .search-section{
+
+    width:100%;
+
+}
+
+.mecanica-page .search-box{
+
+    width:100%;
+
+}
+
+.mecanica-page .search-box input{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:white;
+
+    font-size:1rem;
+
+    box-shadow:
+        0 4px 15px rgba(
+            0,
+            0,
+            0,
+            .08
+        );
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.mecanica-page .search-box input:focus{
+
+    box-shadow:
+        0 0 0 3px rgba(
+            37,
+            99,
+            235,
+            .15
+        );
+
+}
+
+/* ==========================================================
+   TÍTULOS
+========================================================== */
+
+.mecanica-page .section-header{
+
+    margin-bottom:16px;
+
+}
+
+.mecanica-page .section-header h2{
+
+    margin:0;
+
+    color:#0f172a;
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.mecanica-page .areas-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                260px,
+                1fr
+            )
+        );
+
+    gap:20px;
+
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.mecanica-page .area-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    border:1px solid #e5e7eb;
+
+    box-shadow:
+        0 4px 12px rgba(
+            0,
+            0,
+            0,
+            .04
+        );
+
+}
+
+.mecanica-page .area-card:hover{
+
+    transform:
+        translateY(-6px);
+
+    border-color:#2563eb;
+
+    box-shadow:
+        0 12px 30px rgba(
+            37,
+            99,
+            235,
+            .15
+        );
+
+}
+
+.mecanica-page .area-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:1.8rem;
+
+    border-radius:14px;
+
+    background:
+        rgba(
+            37,
+            99,
+            235,
+            .1
+        );
+
+    margin-bottom:18px;
+
+}
+
+.mecanica-page .area-card h3{
+
+    margin:0 0 12px;
+
+    color:#0f172a;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+}
+
+.mecanica-page .area-card p{
+
+    margin:0;
+
+    color:#64748b;
+
+    line-height:1.6;
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media(max-width:768px){
+
+    .mecanica-page .hero{
+
+        padding:24px;
+
+    }
+
+    .mecanica-page .hero h1{
+
+        font-size:1.6rem;
+
+    }
+
+    .mecanica-page .areas-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

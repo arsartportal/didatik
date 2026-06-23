@@ -1,0 +1,1197 @@
+/* ==========================================================
+   CINEMÁTICA
+========================================================== */
+
+.cinematica-page{
+
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.cinematica-page .hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8,
+        #0f172a
+    );
+
+    border-radius:24px;
+
+    padding:48px;
+
+    color:white;
+
+    box-shadow:
+    0 20px 40px rgba(
+        37,
+        99,
+        235,
+        .25
+    );
+
+}
+
+.cinematica-page .hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    right:-100px;
+    top:-100px;
+
+    border-radius:50%;
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        .08
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+
+}
+
+.hero h1{
+
+    margin:0;
+
+    font-size:3rem;
+
+    font-weight:800;
+
+}
+
+.hero p{
+
+    margin-top:16px;
+
+    max-width:700px;
+
+    line-height:1.8;
+
+    font-size:1.1rem;
+
+    opacity:.95;
+
+}
+
+/* ==========================================================
+   TÍTULOS
+========================================================== */
+
+.section-header h2{
+
+    margin:0;
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+}
+
+/* ==========================================================
+   CARDS GERAIS
+========================================================== */
+
+.simulador-card,
+.grafico-card,
+.calculadora-card,
+.quiz-card,
+.resumo-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:32px;
+
+    box-shadow:
+    0 10px 25px rgba(
+        15,
+        23,
+        42,
+        .06
+    );
+
+    border:1px solid
+    rgba(
+        226,
+        232,
+        240,
+        .8
+    );
+
+}
+
+/* ==========================================================
+   SIMULADOR
+========================================================== */
+
+.pista{
+
+    position:relative;
+
+    width:100%;
+
+    height:120px;
+
+    margin-bottom:30px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #e2e8f0 100%
+        );
+
+    border:2px solid #cbd5e1;
+
+}
+
+.pista::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    top:50%;
+
+    height:6px;
+
+    transform:translateY(-50%);
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            white 0,
+            white 40px,
+            transparent 40px,
+            transparent 80px
+        );
+
+}
+
+#carro{
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    transform:
+        translateY(-50%)
+        scaleX(-1);
+
+    font-size:3rem;
+
+    transition:left .3s ease;
+
+    z-index:10;
+
+}
+
+.chegada{
+
+    position:absolute;
+
+    right:20px;
+
+    top:50%;
+
+    transform:
+    translateY(-50%);
+
+    font-size:2.5rem;
+
+}
+
+#sliderPosicao{
+
+    width:100%;
+
+    cursor:pointer;
+
+}
+
+.dados{
+
+    margin-top:24px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+
+    gap:20px;
+
+}
+
+.dado{
+
+    background:#f8fafc;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+}
+
+.dado span{
+
+    display:block;
+
+    color:#64748b;
+
+    margin-bottom:8px;
+
+}
+
+.dado strong{
+
+    font-size:1.4rem;
+
+    color:#2563eb;
+
+}
+
+/* ==========================================================
+   GRÁFICO
+========================================================== */
+
+.grafico-card{
+
+    overflow:auto;
+
+}
+
+#graficoMovimento{
+
+    width:100%;
+
+    background:white;
+
+}
+
+/* ==========================================================
+   CALCULADORA
+========================================================== */
+
+.calculadora-card{
+
+    display:grid;
+
+    gap:20px;
+
+}
+
+.campo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.campo label{
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+.campo input{
+
+    padding:14px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:14px;
+
+    outline:none;
+
+    font-size:1rem;
+
+}
+
+.campo input:focus{
+
+    border-color:#2563eb;
+
+}
+
+#btnCalcularMRU{
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#btnCalcularMRU:hover{
+
+    transform:translateY(-2px);
+
+    background:#1d4ed8;
+
+}
+
+#resultadoMRU{
+
+    background:#eff6ff;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    color:#1e3a8a;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   MOVIMENTOS
+========================================================== */
+
+.movimentos-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
+
+    gap:24px;
+
+}
+
+.movimento-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    border:1px solid #e2e8f0;
+
+}
+
+.movimento-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 20px 40px rgba(
+        37,
+        99,
+        235,
+        .12
+    );
+
+    border-color:#2563eb;
+
+}
+
+.movimento-icon{
+
+    font-size:2.5rem;
+
+    margin-bottom:16px;
+
+}
+
+.movimento-card h3{
+
+    margin-bottom:8px;
+
+}
+
+/* ==========================================================
+   QUIZ
+========================================================== */
+
+.alternativas{
+
+    display:grid;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.alternativa{
+
+    width:100%;
+
+    border:none;
+
+    background:white;
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    font-size:1.05rem;
+
+    font-weight:600;
+
+    color:#0f172a;
+
+    border:2px solid #e2e8f0;
+
+    transition:all .25s ease;
+
+}
+
+.alternativa:hover{
+
+    background:#eff6ff;
+
+    border-color:#2563eb;
+
+    transform:
+        translateX(8px);
+
+    box-shadow:
+        0 10px 25px rgba(
+            37,
+            99,
+            235,
+            .15
+        );
+
+}
+
+.alternativa:hover{
+
+    background:#dbeafe;
+
+    transform:translateX(5px);
+
+}
+
+#resultadoQuiz{
+
+    margin-top:24px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    line-height:1.7;
+
+}
+
+.alternativa.correta{
+
+    background:#dcfce7;
+
+    border-color:#16a34a;
+
+    color:#166534;
+
+}
+
+.alternativa.errada{
+
+    background:#fee2e2;
+
+    border-color:#dc2626;
+
+    color:#991b1b;
+
+}
+
+/* ==========================================================
+   RESUMO
+========================================================== */
+
+.resumo-card ul{
+
+    margin:0;
+
+    padding-left:20px;
+
+}
+
+.resumo-card li{
+
+    margin-bottom:14px;
+
+    font-size:1rem;
+
+    color:#334155;
+
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media(max-width:768px){
+
+    .hero{
+
+        padding:32px;
+
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .dados{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+.movimento-card{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.movimento-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:#2563eb;
+
+    transform:scaleX(0);
+
+    transition:.3s;
+
+}
+
+.movimento-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================================
+CONTROLES DO SIMULADOR
+========================================== */
+
+.painel-controle{
+
+    margin-top:24px;
+
+}
+
+.controle-velocidade{
+
+    margin-bottom:24px;
+
+}
+
+.controle-velocidade label{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+}
+
+#controleVelocidade{
+
+    width:100%;
+
+}
+
+.botoes-simulador{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.botoes-simulador button{
+
+    border:none;
+
+    padding:14px 20px;
+
+    border-radius:14px;
+
+    font-size:0.95rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.botoes-simulador button:hover{
+
+    transform:translateY(-3px);
+
+    background:#1d4ed8;
+
+}
+
+#btnPause{
+
+    background:#f59e0b;
+
+}
+
+#btnPause:hover{
+
+    background:#d97706;
+
+}
+
+#btnStop{
+
+    background:#dc2626;
+
+}
+
+#btnStop:hover{
+
+    background:#b91c1c;
+
+}
+
+#btnReset{
+
+    background:#64748b;
+
+}
+
+#btnReset:hover{
+
+    background:#475569;
+
+}
+
+/* ==========================================================
+   TIPO DE MOVIMENTO
+========================================================== */
+
+.tipo-movimento-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:24px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+    0 10px 30px rgba(
+        15,
+        23,
+        42,
+        .06
+    );
+
+}
+
+.tipo-movimento-card h3{
+
+    margin:0 0 8px;
+
+    color:#0f172a;
+
+}
+
+.tipo-movimento-card p{
+
+    margin:0;
+
+    color:#64748b;
+
+}
+
+#tipoMovimento{
+
+    min-width:320px;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    border:2px solid #dbeafe;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    background:white;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   DESAFIO DIDATIK
+========================================================== */
+
+.desafio-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:white;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+    justify-content:space-between;
+
+    box-shadow:
+    0 20px 40px rgba(
+        37,
+        99,
+        235,
+        .25
+    );
+
+}
+
+.desafio-icon{
+
+    font-size:4rem;
+
+}
+
+.desafio-info{
+
+    flex:1;
+
+}
+
+.desafio-info h3{
+
+    margin:0 0 10px;
+
+    font-size:1.4rem;
+
+}
+
+.desafio-info p{
+
+    margin:0;
+
+    opacity:.9;
+
+    line-height:1.6;
+
+}
+
+#verificarDesafio{
+
+    border:none;
+
+    background:white;
+
+    color:#2563eb;
+
+    padding:16px 24px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#verificarDesafio:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 12px 25px rgba(
+        255,
+        255,
+        255,
+        .25
+    );
+
+}
+
+/* ==========================================================
+   LABORATÓRIO DE GRÁFICOS
+========================================================== */
+
+.grafico-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:32px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+    0 12px 35px rgba(
+        15,
+        23,
+        42,
+        .06
+    );
+
+}
+
+.grafico-topo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:24px;
+
+    gap:24px;
+
+}
+
+.grafico-topo h3{
+
+    margin:0 0 6px;
+
+    color:#0f172a;
+
+}
+
+.grafico-topo p{
+
+    margin:0;
+
+    color:#64748b;
+
+}
+
+.grafico-tabs{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.grafico-tab{
+
+    border:none;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.grafico-tab:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.grafico-tab.active{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.grafico-container{
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #ffffff,
+        #f8fafc
+    );
+
+    border-radius:20px;
+
+    padding:20px;
+
+    border:1px solid #e2e8f0;
+
+}
+
+#graficoMovimento{
+
+    width:100%;
+
+    min-height:450px;
+
+}
+
+/* ==========================================================
+   MOVIMENTOS PREMIUM
+========================================================== */
+
+.movimentos-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(240px,1fr)
+    );
+
+    gap:24px;
+
+}
+
+.movimento-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    border:1px solid #e2e8f0;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.movimento-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:#2563eb;
+
+    transform:scaleX(0);
+
+    transition:.35s;
+
+}
+
+.movimento-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 20px 40px rgba(
+        37,
+        99,
+        235,
+        .12
+    );
+
+    border-color:#2563eb;
+
+}
+
+.movimento-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+.movimento-icon{
+
+    font-size:3rem;
+
+    margin-bottom:18px;
+
+}
+
+.movimento-card h3{
+
+    margin-bottom:10px;
+
+    color:#0f172a;
+
+}
+
+.movimento-card p{
+
+    color:#64748b;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media(max-width:900px){
+
+    .tipo-movimento-card,
+    .desafio-card,
+    .grafico-topo{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    #tipoMovimento{
+
+        width:100%;
+
+        min-width:100%;
+
+    }
+
+    .grafico-tabs{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+}

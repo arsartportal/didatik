@@ -1,15 +1,15 @@
 /* ==========================================================
-   FISICA.JS
+   MECANICA.JS
 ========================================================== */
 
-console.log("FISICA.JS CARREGADO");
+console.log("MECANICA.JS CARREGADO");
 
 /* ==========================================================
    INICIALIZAÇÃO
 ========================================================== */
 
 iniciarBusca();
-iniciarAreas();
+iniciarModulos();
 
 /* ==========================================================
    BUSCA
@@ -19,7 +19,7 @@ function iniciarBusca(){
 
     const campoBusca =
     document.querySelector(
-        ".fisica-page .search-box input"
+        ".mecanica-page .search-box input"
     );
 
     if(!campoBusca) return;
@@ -35,7 +35,7 @@ function iniciarBusca(){
 
             const cards =
             document.querySelectorAll(
-                ".fisica-page .area-card"
+                ".mecanica-page .area-card"
             );
 
             cards.forEach(card=>{
@@ -52,7 +52,9 @@ function iniciarBusca(){
                     card.style.display =
                     "block";
 
-                }else{
+                }
+
+                else{
 
                     card.style.display =
                     "none";
@@ -67,31 +69,31 @@ function iniciarBusca(){
 }
 
 /* ==========================================================
-   ÁREAS DA FÍSICA
+   MÓDULOS DA MECÂNICA
 ========================================================== */
 
-function iniciarAreas(){
+function iniciarModulos(){
 
-    const areas =
+    const modulos =
     document.querySelectorAll(
-        ".fisica-page .area-card"
+        ".mecanica-page .area-card"
     );
 
     console.log(
-        "Áreas encontradas:",
-        areas.length
+        "Módulos encontrados:",
+        modulos.length
     );
 
-    areas.forEach(area=>{
+    modulos.forEach(modulo=>{
 
-        area.addEventListener(
+        modulo.addEventListener(
             "click",
             ()=>{
 
                 const nome =
-area.dataset.page;
+                modulo.dataset.modulo;
 
-                abrirArea(nome);
+                abrirModulo(nome);
 
             }
         );
@@ -101,70 +103,70 @@ area.dataset.page;
 }
 
 /* ==========================================================
-   ABRIR ÁREA
+   ABRIR MÓDULO
 ========================================================== */
 
-function abrirArea(area){
+function abrirModulo(modulo){
 
-    if(!area) return;
+    if(!modulo) return;
 
-    switch(area){
+    switch(modulo){
 
-        case "mecanica":
+        case "cinematica":
 
     carregarPagina(
-        "mecanica"
+        "cinematica"
     );
 
     break;
 
-        case "termologia":
+
+        case "newton":
 
             mostrarMensagem(
-                "Termologia em desenvolvimento."
+                "Leis de Newton em desenvolvimento."
             );
+
             break;
 
-        case "optica":
+        case "energia":
 
             mostrarMensagem(
-                "Óptica em desenvolvimento."
+                "Trabalho e Energia em desenvolvimento."
             );
+
             break;
 
-        case "eletricidade":
+        case "impulso":
 
             mostrarMensagem(
-                "Eletricidade em desenvolvimento."
+                "Impulso e Quantidade de Movimento em desenvolvimento."
             );
+
             break;
 
-        case "ondulatoria":
+        case "gravitacao":
 
             mostrarMensagem(
-                "Ondulatória em desenvolvimento."
+                "Gravitação Universal em desenvolvimento."
             );
+
             break;
 
-        case "moderna":
+        case "hidrostatica":
 
             mostrarMensagem(
-                "Física Moderna em desenvolvimento."
+                "Hidrostática em desenvolvimento."
             );
+
             break;
 
-        case "astronomia":
+        default:
 
             mostrarMensagem(
-                "Astronomia em desenvolvimento."
+                "Conteúdo não encontrado."
             );
-            break;
 
-        case "laboratorio":
-
-            mostrarMensagem(
-                "Laboratório Virtual em desenvolvimento."
-            );
             break;
 
     }
